@@ -1,3 +1,20 @@
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Syne Mono', monospace;
+
+*/
+
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bolder;
+    background: rgb(193,190,190);
+    background: linear-gradient(5deg, rgba(193,190,190,1) 16%, rgba(227,226,226,1) 62%, rgba(236,236,236,1) 80%);
+}
+/* navbar */
+
 .navbar-brand{
     margin-left: 70px;
 }
@@ -9,4 +26,50 @@ img{
 
 .collapse{
     margin-right: 70px;
+}
+
+/* subject box */
+#subject-box{
+   
+    position: relative;
+    margin: 150px auto 150px auto;
+    text-align: center;
+}
+
+.header{
+    margin: 20px auto;
+}
+
+.head{
+    font-family: 'Syne Mono', monospace;
+    font-weight: 900;
+}
+
+span{
+    background: linear-gradient(180deg,rgba(255, 255, 255, 0) 65%,#FA5 0);
+}
+
+
+
+
+/* subject-box header form */
+.subject-box-inner{
+    margin: 10px auto 10px auto;
+    width: 80%;
+    height: 200px;
+    background-color: #F9F7F7
+}
+
+
+form .header-form{
+    background-color: blue;
+    border: none;
+}
+.header-form-input{
+    /* background-color: crimson; */
+    border: none;
+}
+
+.header-form-input:active{
+    background-color: chartreuse;
 }

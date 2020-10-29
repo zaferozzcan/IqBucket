@@ -32,7 +32,9 @@ subjectRouter.get("/", (req, res) => {
             res.render("index.ejs", {
                 subjects: data
             })
-        } console.log("Cannot load subs");
+        } else {
+            console.log("Cannot load subs");
+        }
     })
 })
 

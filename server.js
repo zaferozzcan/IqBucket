@@ -38,11 +38,11 @@ db.on('disconnected', () => console.log('mongo disconnected'))
 // CONTROLLERS
 const subjectController = require('./controllers/subject_controller')
 const { use } = require('./controllers/subject_controller')
-app.use('/subject', subjectController)
+app.use('/subjects', subjectController)
 
 
 app.get('/', (req, res) => {
-    res.redirect('/subject')
+    res.redirect('/subjects')
 })
 
 
