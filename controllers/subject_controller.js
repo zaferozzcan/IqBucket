@@ -25,4 +25,16 @@ subjectRouter.get("/create/seed", (req, res) => {
     res.redirect("/subject")
 })
 
+subjectRouter.get("/", (req, res) => {
+    Subject.find({}, (err, data) => {
+        if (!err) {
+            console.log("index.js get route data", data);
+            res.render("index.ejs", {
+                subjects: data
+            })
+        } console.log("Cannot load subs");
+    })
+})
+
+
 module.exports = subjectRouter;

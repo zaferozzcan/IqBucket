@@ -2,6 +2,7 @@
 const express = require('express')
 const methodOverride = require('method-override')
 const mongoose = require('mongoose')
+var favicon = require('serve-favicon');
 
 
 // CONFIGURATION
@@ -12,6 +13,8 @@ const PORT = process.env.PORT
 const mongodbURI = process.env.MONGODBURI
 
 // MIDDLEWARE
+app.use(favicon(__dirname + "/public/favicon_io/favicon.ico"));
+app.use(express.static(__dirname + "public"))
 app.use(methodOverride('_method'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
@@ -39,6 +42,9 @@ const { use } = require('./controllers/subject_controller')
 app.use('/subject', subjectController)
 
 
+app.get('/', (req, res) => {
+    res.redirect('/subject')
+})
 
 
 // APP LISTENER

@@ -8,5 +8,4 @@ const subjectSchema = mongoose.Schema({
 
 const Subject = mongoose.model("Subject", subjectSchema)
 
-
 module.exports = Subject;
