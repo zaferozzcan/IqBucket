@@ -13,12 +13,11 @@ const PORT = process.env.PORT
 const mongodbURI = process.env.MONGODBURI
 
 // MIDDLEWARE
-app.use(favicon(__dirname + "/public/favicon_io/favicon.ico"));
-app.use(express.static(__dirname + "public"))
+
+app.use(express.static(__dirname + "/public"))
 app.use(methodOverride('_method'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
-
 
 // DATABASE
 mongoose.connect(
