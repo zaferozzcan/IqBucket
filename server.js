@@ -40,6 +40,10 @@ const subjectController = require('./controllers/subject_controller')
 const { use } = require('./controllers/subject_controller')
 app.use('/subjects', subjectController)
 
+const questionController = require('./controllers/question_controller')
+
+app.use('/question', questionController)
+
 
 app.get('/', (req, res) => {
     res.redirect('/subjects/front-end')
