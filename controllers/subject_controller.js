@@ -9,11 +9,11 @@ subjectRouter.get("/create/seed", (req, res) => {
     Subject.create([
         {
             name: "node.js",
-            area: "Back End",
+            area: "back-end",
         },
         {
             name: "React",
-            area: "Front End"
+            area: "front-end"
         }
     ], (err, res) => {
         if (!err) {
@@ -22,21 +22,50 @@ subjectRouter.get("/create/seed", (req, res) => {
             console.log(err);
         }
     })
-    res.redirect("/subject")
+    res.redirect("/subjects")
 })
 
-subjectRouter.get("/", (req, res) => {
-    Subject.find({}, (err, data) => {
-        if (!err) {
-            console.log("index.js get route data", data);
-            res.render("subject_box.ejs", {
-                subjects: data
-            });
-        } else {
-            console.log("Cannot load subs");
-        }
-    })
+// // front-end-route
+// subjectRouter.get("/home", (req, res) => {
+//     Subject.find({}, (err, data) => {
+//         if (!err) {
+//             console.log(data);
+//             res.render("index.ejs"), {
+//                 subjects: data
+//             }
+//         } else {
+//             console.log("err front-end get route", err);
+//         }
+//     })
+// })
+
+// index route
+subjectRouter.get("/:area", (req, res) => {
+    if (req.params.area) {
+        Subject.find({ area: req.params.area }, (err, data) => {
+            if (!err) {
+                res.render("index.ejs", {
+                    subjects: data
+                });
+            } else {
+                console.log("Cannot load subs");
+            }
+        })
+    } else {
+        Subject.find({}, (err, data) => {
+            if (!err) {
+                res.render("index.ejs", {
+                    subjects: data
+                });
+            } else {
+                console.log("Cannot load subs");
+            }
+        })
+    }
+
 })
+
+
 
 
 module.exports = subjectRouter;

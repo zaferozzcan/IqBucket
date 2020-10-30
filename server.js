@@ -42,7 +42,7 @@ app.use('/subjects', subjectController)
 
 
 app.get('/', (req, res) => {
-    res.redirect('/subjects')
+    res.redirect('/subjects/front-end')
 })
 
 

@@ -14,7 +14,7 @@
 
         <div class="row subject-box-inner">
             <div class="col-md-4 col-sm-12">
-                <form class="header-form" action="">
+                <form class="header-form" action="/subjects/front-end" method="GET">
                     <input onclick="" class="header-form-input" type="submit" value="Front End Questions">
                 </form>
             </div>
@@ -30,6 +30,11 @@
             </div>
             <div style="border:1px solid red;" class="col-md-12">
 
+                <% subjects.forEach(subj =>{ %>
+                <div>
+                    <h1><%= subj.name %></h1>
+                </div>
+                <%})%>
             </div>
 
         </div>
