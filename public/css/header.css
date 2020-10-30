@@ -68,11 +68,13 @@ form .header-form{
     
 }
 .header-form-input{
-    /* background-color: crimson; */
+    background-color: #FA5;
+    border-radius: 5px;
     border: none;
 }
 
-.header-form-input:active{
+.header-form-input:focus{
     background-color:#FA5;
 }
+
 
