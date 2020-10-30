@@ -1,27 +1,21 @@
 const express = require("express");
-const Subject = require("../models/subjects")
+const Subject = require("../models/subjects");
+const subjs = require("../models/subjs");
 
 const subjectRouter = express.Router()
-
+const subj = require("../models/subjs")
 
 // seed
 subjectRouter.get("/create/seed", (req, res) => {
-    Subject.create([
-        {
-            name: "node.js",
-            area: "back-end",
-        },
-        {
-            name: "React",
-            area: "front-end"
-        }
-    ], (err, res) => {
-        if (!err) {
-            console.log("Seed is created");
-        } else {
-            console.log(err);
-        }
-    })
+    Subject.create(
+        subj
+        , (err, res) => {
+            if (!err) {
+                console.log("Seed is created");
+            } else {
+                console.log(err);
+            }
+        })
     res.redirect("/subjects")
 })
 

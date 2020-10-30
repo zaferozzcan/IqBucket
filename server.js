@@ -45,7 +45,7 @@ const questionController = require('./controllers/question_controller')
 app.use('/question', questionController)
 
 
-app.get('/', (req, res) => {
+app.get('/' || '/subjects', (req, res) => {
     res.redirect('/subjects/front-end')
 })
 
