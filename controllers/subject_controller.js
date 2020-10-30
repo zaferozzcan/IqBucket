@@ -29,9 +29,9 @@ subjectRouter.get("/", (req, res) => {
     Subject.find({}, (err, data) => {
         if (!err) {
             console.log("index.js get route data", data);
-            res.render("index.ejs", {
+            res.render("subject_box.ejs", {
                 subjects: data
-            })
+            });
         } else {
             console.log("Cannot load subs");
         }
