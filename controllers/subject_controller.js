@@ -16,22 +16,10 @@ subjectRouter.get("/create/seed", (req, res) => {
                 console.log(err);
             }
         })
-    res.redirect("/subjects")
+    res.redirect("/subjects/front-end")
 })
 
-// // front-end-route
-// subjectRouter.get("/home", (req, res) => {
-//     Subject.find({}, (err, data) => {
-//         if (!err) {
-//             console.log(data);
-//             res.render("index.ejs"), {
-//                 subjects: data
-//             }
-//         } else {
-//             console.log("err front-end get route", err);
-//         }
-//     })
-// })
+
 
 // index route
 subjectRouter.get("/:area", (req, res) => {
@@ -59,6 +47,8 @@ subjectRouter.get("/:area", (req, res) => {
 
 })
 
+
+subjectRouter.get("/front-end/:tech")
 
 
 

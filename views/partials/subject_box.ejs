@@ -30,12 +30,15 @@
                         value="Problem Solving Questions">
                 </form>
             </div>
-            <div style="border:1px solid red;" class="col-md-12">
+            <div style="border:1px solid red;" class="col-md-12 subject-chip-container">
 
                 <% subjects.forEach(subj =>{ %>
-                <div class="subject-chip">
-                    <h1><%= subj.name %></h1>
-                </div>
+                <!-- <div class="subject-chip-box">
+                    <p class="subject-chip"><span><%= subj.name %></span></p>
+                </div> -->
+                <form class="subject-chip-box" action="/subjects/back-end" method="GET">
+                    <input class="subject-chip" type="submit" value="<%= subj.name %>">
+                </form>
                 <%})%>
             </div>
 

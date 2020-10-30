@@ -55,5 +55,27 @@ module.exports = subj = [
     {
         name: "jQuery",
         area: "front-end"
-    }
+    },
+    {
+        name: ".NET",
+        area: "back-end"
+    }, {
+        name: "ADO.NET",
+        area: "back-end"
+    }, {
+        name: "ASP.NET",
+        area: "front-end"
+    }, {
+        name: "Ruby on Rails",
+        area: "back-end"
+    }, {
+        name: "Flask",
+        area: "back-end"
+    }, {
+        name: "express",
+        area: "back-end"
+    }, {
+        name: "Django",
+        area: "back-end"
+    },
 ]
