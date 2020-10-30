@@ -41,8 +41,7 @@ const { use } = require('./controllers/subject_controller')
 app.use('/subjects', subjectController)
 
 const questionController = require('./controllers/question_controller')
-
-app.use('/question', questionController)
+app.use('/questions', questionController)
 
 
 app.get('/' || '/subjects', (req, res) => {

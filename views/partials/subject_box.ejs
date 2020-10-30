@@ -36,7 +36,7 @@
                 <!-- <div class="subject-chip-box">
                     <p class="subject-chip"><span><%= subj.name %></span></p>
                 </div> -->
-                <form class="subject-chip-box" action="/subjects/back-end" method="GET">
+                <form class="subject-chip-box" action="/questions/subject/<%=subj.name %>" method="GET">
                     <input class="subject-chip" type="submit" value="<%= subj.name %>">
                 </form>
                 <%})%>
