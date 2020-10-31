@@ -24,7 +24,8 @@ questionRouter.get("/:tech", (req, res) => {
     Question.find({ tech: req.params.tech }, (err, data) => {
         if (!err) {
             res.render("index/questions.ejs", {
-                qts: data
+                qts: data,
+                tech: req.params.tech
             })
         } else {
             console.log("err in get question", err);
