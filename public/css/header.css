@@ -182,6 +182,8 @@ form .header-form{
 .close-tooltip{
   right: 15px;
   position: absolute;
+  left: 5px;
+  top: 5px;
   background: #fff;
   color: #555;
   width: 20px;

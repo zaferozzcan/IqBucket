@@ -4,6 +4,7 @@ const Question = require("../models/questions")
 const questionRouter = express.Router()
 const qts = require("../models/qts")
 
+// seed \\
 questionRouter.get("/create/seed", (req, res) => {
     Question.create(qts, (err, data) => {
         console.log(data);
@@ -18,7 +19,7 @@ questionRouter.get("/create/seed", (req, res) => {
 
 
 
-
+// index //
 questionRouter.get("/:tech", (req, res) => {
     Question.find({ tech: req.params.tech }, (err, data) => {
         if (!err) {
@@ -31,12 +32,14 @@ questionRouter.get("/:tech", (req, res) => {
     })
 })
 
+// create show
 questionRouter.get("/:tech/new", (req, res) => {
     res.render("../views/show/new_question.ejs", {
-        tech: req.body.tech
+        tech: req.params.tech
     })
 })
 
+// cretae post
 questionRouter.post("/", (req, res) => {
     Question.create(req.body, (err, res) => {
         if (!err) {
