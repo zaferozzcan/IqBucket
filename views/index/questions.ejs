@@ -1,0 +1,37 @@
+<%- include("../partials/header.ejs") %>
+
+<%- include("../partials/navbar.ejs") %>
+
+
+<div id="subject-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-0 header head">
+                <h1>Top <%=qts.tech %> questions</h1>
+            </div>
+        </div>
+
+        <div style="border:1px solid lightslategray; border-radius: 5px;" class="row subject-box-inner">
+
+            <div class="col-md-12 subject-chip-container">
+
+                <% qts.forEach(q =>{ %>
+                <div class="subject-chip-box">
+                    <p class="subject-chip"><span><%= q.question %></span></p>
+                </div>
+                <!-- <form class="subject-chip-box" action="/questions/<%=q.question %>" method="GET">
+                    <input class="subject-chip" type="submit" value="<%= subj.name %>">
+                </form> -->
+                <%})%>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+<%- include("../partials/footer.ejs") %>

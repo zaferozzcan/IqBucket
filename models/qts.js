@@ -27,7 +27,6 @@ module.exports = qts = [
         level: "entry",
         source: "toptal.com "
     }
-
 ]
 
 // {

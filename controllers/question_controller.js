@@ -17,7 +17,17 @@ questionRouter.get("/create/seed", (req, res) => {
 })
 
 
-questionRouter.get("/:tech")
+questionRouter.get("/:tech", (req, res) => {
+    Question.find({ tech: req.params.tech }, (err, data) => {
+        if (!err) {
+            res.render("index/questions.ejs", {
+                qts: data
+            })
+        } else {
+            console.log("err in get question", err);
+        }
+    })
+})
 
 
 

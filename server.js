@@ -44,10 +44,12 @@ const questionController = require('./controllers/question_controller')
 app.use('/questions', questionController)
 
 
-app.get('/' || '/subjects', (req, res) => {
+app.get('/', (req, res) => {
     res.redirect('/subjects/front-end')
 })
-
+app.get('/subjects', (req, res) => {
+    res.redirect('/subjects/front-end')
+})
 
 // APP LISTENER
 app.listen(PORT, () => {
