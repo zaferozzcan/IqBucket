@@ -12,6 +12,7 @@ body{
     font-weight: bolder;
     background: rgb(193,190,190);
     background: linear-gradient(5deg, rgba(193,190,190,1) 16%, rgba(227,226,226,1) 62%, rgba(236,236,236,1) 80%);
+    cursor: pointer;
 }
 /* navbar */
 
@@ -100,3 +101,15 @@ form .header-form{
     border-radius: 5px;
     background: linear-gradient(180deg,rgba(255, 255, 255, 0.63) 65%,#FA5 0);
 }
+
+
+
+
+/* qts */
+.subject-chip-container-qts{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-evenly ;
+}
+
+

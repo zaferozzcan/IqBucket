@@ -7,30 +7,45 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6 col-sm-0 header head">
-                <h1>Top <%=qts.tech %> questions</h1>
+                <h1>Top <%= qts[0].tech %> questions</h1>
             </div>
         </div>
 
         <div style="border:1px solid lightslategray; border-radius: 5px;" class="row subject-box-inner">
 
-            <div class="col-md-12 subject-chip-container">
+            <div class="col-md-12 subject-chip-container-qts">
+                <!-- <ol>
+                    <% qts.forEach(q =>{ %>
+                    <li>
+                        <div class="subject-chip-box">
+                            <p class="subject-chip"><span><%= q.question %></span></p>
+                        </div>
+                    </li>
+                    <%})%>
+                </ol> -->
 
-                <% qts.forEach(q =>{ %>
-                <div class="subject-chip-box">
-                    <p class="subject-chip"><span><%= q.question %></span></p>
-                </div>
-                <!-- <form class="subject-chip-box" action="/questions/<%=q.question %>" method="GET">
-                    <input class="subject-chip" type="submit" value="<%= subj.name %>">
-                </form> -->
-                <%})%>
+                <ol>
+                    <% qts.forEach(q =>{ %>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            <%= q.question %>
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="card card-body">
+                            <%= q.answer %>
+                        </div>
+                    </div>
+                    <%})%>
+                </ol>
+
             </div>
 
         </div>
 
     </div>
 </div>
-
-
 
 
 
