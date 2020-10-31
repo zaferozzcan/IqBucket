@@ -3,47 +3,47 @@
 <%- include("../partials/navbar.ejs") %>
 
 
-<div id="subject-box">
-    <div class="container">
+<div id="questions-box">
+    <div style="margin: 100px auto;" class="container">
         <div class="row">
             <div class="col-md-6 col-sm-0 header head">
                 <h1>Top <%= qts[0].tech %> questions</h1>
             </div>
         </div>
 
-        <div style="border:1px solid lightslategray; border-radius: 5px;" class="row subject-box-inner">
+        <div style="border:1px solid; border-radius: 5px;" class="row question-box-inner">
 
-            <div class="col-md-12 subject-chip-container-qts">
-                <!-- <ol>
+            <div class="col-md-12 question-chip-container">
+
+                <ol class="question-chip-list">
                     <% qts.forEach(q =>{ %>
                     <li>
-                        <div class="subject-chip-box">
-                            <p class="subject-chip"><span><%= q.question %></span></p>
+                        <button type="button" class="collapsible"> <span><%=q.question%></span></button>
+                        <div class="content">
+                            <p><%=q.answer%></p>
                         </div>
                     </li>
                     <%})%>
-                </ol> -->
-
-                <ol>
-                    <% qts.forEach(q =>{ %>
-                    <p>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse"
-                            data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            <%= q.question %>
-                        </button>
-                    </p>
-                    <div class="collapse" id="collapseExample">
-                        <div class="card card-body">
-                            <%= q.answer %>
-                        </div>
-                    </div>
-                    <%})%>
                 </ol>
 
+                <script>
+                    var coll = document.getElementsByClassName("collapsible");
+                    var i;
+
+                    for (i = 0; i < coll.length; i++) {
+                        coll[i].addEventListener("click", function () {
+                            this.classList.toggle("active");
+                            var content = this.nextElementSibling;
+                            if (content.style.display === "block") {
+                                content.style.display = "none";
+                            } else {
+                                content.style.display = "block";
+                            }
+                        });
+                    }
+                </script>
             </div>
-
         </div>
-
     </div>
 </div>
 
