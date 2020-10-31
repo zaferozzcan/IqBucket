@@ -3,13 +3,17 @@
 <%- include("../partials/navbar.ejs") %>
 
 
-<div id="questions-box">
+<div style="text-align: center;" id="questions-box">
     <div style="margin: 100px auto;" class="container">
         <div class="row">
             <div class="col-md-6 col-sm-0 header head">
                 <h1>Top <%= qts[0].tech %> questions</h1>
             </div>
         </div>
+        <div><button onclick="location.href='/questions/ <%=qts[0].tech %>/new'" type="submit">add more
+                <%=qts[0].tech %>
+                questions</button></div>
+
 
         <div style="border:1px solid; border-radius: 5px;" class="row question-box-inner">
 

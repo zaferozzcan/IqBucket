@@ -17,6 +17,8 @@ questionRouter.get("/create/seed", (req, res) => {
 })
 
 
+
+
 questionRouter.get("/:tech", (req, res) => {
     Question.find({ tech: req.params.tech }, (err, data) => {
         if (!err) {
@@ -29,6 +31,22 @@ questionRouter.get("/:tech", (req, res) => {
     })
 })
 
+questionRouter.get("/:tech/new", (req, res) => {
+    res.render("../views/show/new_question.ejs", {
+        tech: req.body.tech
+    })
+})
+
+questionRouter.post("/", (req, res) => {
+    Question.create(req.body, (err, res) => {
+        if (!err) {
+            console.log("A new question added.");
+        } else {
+            console.log("error new question post", err);
+        }
+    })
+    res.redirect("/questions")
+})
 
 
 
