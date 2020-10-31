@@ -40,9 +40,33 @@
                     <input class="subject-chip" type="submit" value="<%= subj.name %>">
                 </form>
                 <%})%>
+                <!-- TOOLTIP -->
+                <!-- referenced from  https://stackoverflow.com/questions/39362353/how-to-make-a-rich-tooltip-with-a-html-form-in-it -->
+                <div style="margin: 0;">
+                    <p class="show-tooltip">+
+                    </p>
+                    <div class="tooltip-form">
+                        <span class="close-tooltip">X</span>
+                        <h3>Add More Technology</h3>
+                        <p>Add More Stuff
+                        </p>
+                        <form style="display: flex;flex-direction: column;" action="/" method="POST">
+                            <input name:name type="text" placeholder="tech name" />
+                            <input name:area type="text" placeholder="tech area" />
+                            <input style="background-color: lightgray; border-radius: 5px;" type="submit" value="Add" />
+                        </form>
+                    </div>
+                </div>
+                <script>
+                    $(".show-tooltip").on("mouseover", function (event) {
+                        console.log("I got move");
+                        $(".tooltip-form").fadeIn()
+
+                    })
+                    $('.close-tooltip').on('click', function () {
+                        $(".tooltip-form").fadeOut();
+                    });
+                </script>
             </div>
-
         </div>
-
     </div>
-</div>
