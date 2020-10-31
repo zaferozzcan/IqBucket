@@ -1,3 +1,4 @@
+const { text } = require("express");
 const express = require("express");
 const Subject = require("../models/subjects");
 const subjs = require("../models/subjs");
@@ -27,7 +28,8 @@ subjectRouter.get("/:area", (req, res) => {
         Subject.find({ area: req.params.area }, (err, data) => {
             if (!err) {
                 res.render("index.ejs", {
-                    subjects: data
+                    subjects: data,
+                    area: req.params.area
                 });
             } else {
                 console.log("Cannot load subs");
@@ -45,6 +47,18 @@ subjectRouter.get("/:area", (req, res) => {
         })
     }
 
+})
+
+subjectRouter.post("/", (req, res) => {
+    console.log("post body", req.body);
+    Subject.create(req.body, (err, data) => {
+        if (!err) {
+            console.log("A subject added!");
+        } else {
+            console.log("tooltip post form err", err);
+        }
+    })
+    res.redirect("/subjects")
 })
 
 
