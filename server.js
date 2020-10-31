@@ -50,6 +50,9 @@ app.get('/', (req, res) => {
 app.get('/subjects', (req, res) => {
     res.redirect('/subjects/front-end')
 })
+app.get("/questions", (req, res) => {
+    res.redirect("/")
+})
 
 // APP LISTENER
 app.listen(PORT, () => {
