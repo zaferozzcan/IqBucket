@@ -20,7 +20,8 @@
                     <li>
                         <button type="button" class="collapsible"> <span><%=q.question%></span></button>
                         <div class="content">
-                            <p><%=q.answer%></p>
+                            <p>Answer: <%=q.answer%></p>
+                            <a class="source" href=<%=q.source %>>Source: <%=q.source %></a>
                         </div>
                     </li>
                     <%})%>
