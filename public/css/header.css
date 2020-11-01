@@ -216,4 +216,26 @@ form .header-form{
 
 
 
-/* draggable */
+/* quiz-items */
+#quiz-subject-items{
+    /* width: 100%;
+    height: 400px;
+    flex: 2;
+    display: flex;
+    align-items: flex-start;
+    flex-flow:column wrap; */
+
+}
+.quiz-chip-box{
+    width: 100%;
+    height: 400px;
+    flex: 2;
+    display: flex;
+    align-items: flex-start;
+    flex-flow:column wrap;
+}
+
+input[type="checkbox"] {
+    background: #3d404e;
+    border: #7f83a2 1px solid;
+ }

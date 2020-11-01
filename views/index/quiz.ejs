@@ -4,12 +4,16 @@
 
 <div style="margin-top:100px" class="container">
     <div class="row">
-        <div class="col-sm">
-            <% subs.forEach(s =>{ %>
-            <form class="subject-chip-box">
-                <input id="subject-chip-box" class="subject-chip" type="button" value="<%= s.name %>">
+        <div id="quiz-subject-items" class="col-md-12 col-sm-12">
+            <form class="quiz-chip-box" action="/quiz/cards" method="POST">
+                <% subs.forEach(s =>{ %>
+                <div>
+                    <input id="subject-chip" class="subject-chip" type="button" value="<%= s.name %>">
+                    <input style="color: gray;" type="checkbox" name="<%= s.name %>">
+                </div>
+                <%})%>
+                <input style="margin-top: 50px;" class="btn btn-primary" type="submit" value="Make Quz Cards">
             </form>
-            <%})%>
         </div>
     </div>
 </div>
