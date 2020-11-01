@@ -43,7 +43,12 @@ app.use('/subjects', subjectController)
 const questionController = require('./controllers/question_controller')
 app.use('/questions', questionController)
 
+const quizController = require('./controllers/quiz_controller')
+app.use('/quiz', quizController)
 
+
+
+// route
 app.get('/', (req, res) => {
     res.redirect('/subjects/front-end')
 })

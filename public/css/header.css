@@ -93,8 +93,8 @@ form .header-form{
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    height: 50%;
-    transform: translateY(-40px);
+  
+   
 }
 .subject-chip-box{
     margin-right: 66px;
@@ -216,3 +216,4 @@ form .header-form{
 
 
 
+/* draggable */

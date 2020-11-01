@@ -2,7 +2,17 @@
 
 <%- include("../partials/navbar.ejs") %>
 
-<%- include("../partials/subject_box.ejs") %>
+<div style="margin-top:100px" class="container">
+    <div class="row">
+        <div class="col-sm">
+            <% subs.forEach(s =>{ %>
+            <form class="subject-chip-box">
+                <input id="subject-chip-box" class="subject-chip" type="button" value="<%= s.name %>">
+            </form>
+            <%})%>
+        </div>
+    </div>
+</div>
 
 
 

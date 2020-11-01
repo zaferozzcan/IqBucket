@@ -1,5 +1,7 @@
 const express = require("express");
 const Question = require("../models/questions")
+const Subject = require("../models/subjects");
+
 
 const questionRouter = express.Router()
 const qts = require("../models/qts")
