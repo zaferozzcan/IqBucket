@@ -55,6 +55,15 @@ questionRouter.post("/", (req, res) => {
 })
 
 
+questionRouter.delete("/:tech/:id", (req, res) => {
+    Question.findByIdAndDelete({ _id: req.params.id }, (err, data) => {
+        if (!err) {
+            console.log("item has been deleted");
+        } else {
+            console.log(data);
+        }
+    })
+})
 
 
 

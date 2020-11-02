@@ -327,6 +327,10 @@ input[type="checkbox"] {
 
 .question-edit-button a,.question-delete-button a{
     background-color: #FA5;
+    color: black;
+    font-weight: lighter;
+    text-decoration: node;
     margin-left: 20px;
     border-radius: 5px;
+    border: 1px black solid;
 }
