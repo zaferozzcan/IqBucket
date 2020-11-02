@@ -26,10 +26,14 @@ quizRouter.get("/", (req, res) => {
 quizRouter.get("/cards", (req, res) => {
     for (key of [Object.keys(quizReqArr)]) {
         Question.find({ tech: key }, (err, data) => {
-            for (obj of data) {
-                obj.random = Number(Math.random() * data.lenght - 1)
+            if (data.length < 1) {
+                res.send(`
+                <h1>You must select a technology</h1>
+                <button onclick='location.href="/quiz"' type='button'>Go Back</button>
+                `)
+
             }
-            console.log("random data", data[Math.floor(Math.random() * data.length) - 1]);
+            // console.log("random data", data[Math.floor(Math.random() * data.length) - 1]);
             if (!err) {
                 res.render("../views/index/quiz_cards.ejs", {
                     cardQuestions: data[Math.ceil(Math.random() * data.length) - 1]
