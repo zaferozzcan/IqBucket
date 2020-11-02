@@ -165,8 +165,19 @@ form .header-form{
  }
 
 
+/* question delete and edit button */
+.question-edit-button a,.question-delete-button a{
+    background-color: #FA5;
+    color: black;
+    font-weight: lighter;
+    text-decoration: node;
+    margin-left: 20px;
+    border-radius: 5px;
+    border: 1px black solid;
+}
 
- /* tooltip */
+
+ /* tooltip form */
 .show-tooltip{
     position: absolute;
     right: 0;
@@ -240,11 +251,13 @@ input[type="checkbox"] {
     border: #7f83a2 1px solid;
  }
 
+
+
+
+
 /* flipcard /////////////////////// */
+/* <!--referenced from: https://www.youtube.com/watch?v=OV8MVmtgmoY  --> */
 
-
-
-/* THE MAINCONTAINER HOLDS EVERYTHING */
 .maincontainer{
   position: absolute;
   width: 250px;
@@ -256,7 +269,6 @@ input[type="checkbox"] {
 
 }
 
-/* THE CARD HOLDS THE FRONT AND BACK FACES */
 .thecard{
   position: relative;
   top: 0;
@@ -268,13 +280,10 @@ input[type="checkbox"] {
   transition: all 0.8s ease;
 }
 
-/* THE PSUEDO CLASS CONTROLS THE FLIP ON MOUSEOVER AND MOUSEOUT */
-
 .card-rotate{
   transform: rotateY(180deg);
 }
 
-/* THE FRONT FACE OF THE CARD, WHICH SHOWS BY DEFAULT */
  .thefront{
   position: absolute;
   top: 0;
@@ -289,14 +298,12 @@ input[type="checkbox"] {
   text-align: center;
 }
 
-/* THE BACK FACE OF THE CARD, WHICH SHOWS ON MOUSEOVER */
 .theback{
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   border-radius: 10px;
-  /* background: #fafafa; */
   background:lightgray;
   backface-visibility: hidden;
   overflow: hidden;
@@ -307,7 +314,6 @@ input[type="checkbox"] {
 }
 
 
-/*This block (starts here) is merely styling for the flip card, and is NOT an essential part of the flip code */
 .thefront h1, .theback h1{
   font-family:  sans-serif;
   padding: 30px;
@@ -322,15 +328,4 @@ input[type="checkbox"] {
   font-weight: normal;
   font-size: 12px;
   text-align: center;
-}
-
-
-.question-edit-button a,.question-delete-button a{
-    background-color: #FA5;
-    color: black;
-    font-weight: lighter;
-    text-decoration: node;
-    margin-left: 20px;
-    border-radius: 5px;
-    border: 1px black solid;
 }

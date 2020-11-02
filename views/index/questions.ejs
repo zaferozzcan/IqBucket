@@ -25,7 +25,8 @@
                     <li>
                         <!-- question delete and edit button -->
                         <button type="button" class="collapsible"> <span><%=q.question%> <small
-                                    class="question-edit-button"><a href="">Edit</a></small><small
+                                    class="question-edit-button"><a
+                                        href="/questions/<%=q.tech%>/<%=q.id%>/edit">Edit</a></small><small
                                     class="question-delete-button">
                                     <form action="/questions/<%=q.tech%>/<%=q._id%>?_method=DELETE" , method="POST">
                                         <input style="background-color: #FA5;border-radius: 5px;" value="Delete"

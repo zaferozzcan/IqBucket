@@ -59,14 +59,29 @@ questionRouter.post("/", (req, res) => {
 questionRouter.get("/:tech/:id/edit", (req, res) => {
     Question.find({ _id: req.params.id }, (err, data) => {
         if (!err) {
+            console.log(data);
             res.render("../views/show/edit_question.ejs", {
-                q: data
+                q: data[0]
             })
         } else {
-            console.log("edit question error");
+            console.log("edit question error", err);
         }
     })
 })
+
+
+
+// edit put route
+questionRouter.put("/:tech/:id/", (req, res) => {
+    Question.findByIdAndUpdate({ _id: req.params.id }, req.body, (err, data) => {
+        if (!err) {
+            console.log("the question updated");
+        } else {
+            console.log("an error in question edit");
+        }
+    })
+    res.redirect(`/questions/${req.params.tech}`)
+});
 
 
 
