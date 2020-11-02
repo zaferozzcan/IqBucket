@@ -52,6 +52,9 @@ img{
     font-family: 'Syne Mono', monospace;
     font-weight: 900;
 }
+.header h1{
+    font-size: 4rem;
+}
 
 span{
     background: linear-gradient(180deg,rgba(255, 255, 255, 0) 65%,#FA5 0);
@@ -91,13 +94,14 @@ form .header-form{
 /* subjec chip */
 .subject-chip-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
   
    
 }
 .subject-chip-box{
-    margin-right: 66px;
+    margin-top: 10px;
+    margin-right: 60px;
     background-color: lightgrey;
     border-radius: 5px;
     width:fit-content;
