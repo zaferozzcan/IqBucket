@@ -24,12 +24,19 @@ quizRouter.get("/", (req, res) => {
 
 // cards show route
 quizRouter.get("/cards", (req, res) => {
-    // for (key of [Object.keys(quizReqArr)]) {
-    //     Question.find({ tech: key }, (err, data) => {
-    //         res.send(data)
-    //     })
-    // }
-    res.render("../views/index/quiz_cards.ejs")
+    for (key of [Object.keys(quizReqArr)]) {
+        Question.find({ tech: key }, (err, data) => {
+            for (obj of data) {
+                obj.random = Number(Math.random() * data.lenght - 1)
+            }
+            console.log("random data", data[Math.floor(Math.random() * data.length) - 1]);
+            if (!err) {
+                res.render("../views/index/quiz_cards.ejs", {
+                    cardQuestions: data[Math.ceil(Math.random() * data.length) - 1]
+                })
+            }
+        })
+    }
 })
 
 // cards post route

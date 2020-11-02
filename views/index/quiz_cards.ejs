@@ -4,24 +4,31 @@
 
 
 <div>
+
     <div class="maincontainer">
+        <!-- <% for(let i=0;i<1;i++) { %> -->
 
         <div class="thecard">
-
             <div class="thefront">
-                <h1>Front of Card</h1>
-                <p>This is the front of the card. It contains important information. Please see overleaf for more
-                    details.</p>
+                <h1><%=cardQuestions.tech %> Question</h1>
+                <p> <%=cardQuestions.question %> </p>
                 <button type="button" class="btn btn-secondary thefront-show">flip</button>
             </div>
 
             <div class="theback">
-                <h1>Back of Card</h1>
-                <p>Your use of this site is subject to the terms and conditions governing this and all transactions.</p>
-                <button type="button" class="btn btn-secondary thefront-show">new card</button>
+                <h1>Answer</h1>
+                <p><%=cardQuestions.answer%></p>
+                <button style="background-color: #FA5;" type="button" class="btn btn-secondary thefront-show">flip
+                    back</button>
+                <button onclick="location.href='/quiz/cards'"
+                    style="display: block; margin:2px auto; background-color: #FA5;" type="button"
+                    class="btn btn-secondary thefront-show">new
+                    card</button>
             </div>
         </div>
+        <!-- <% } %> -->
     </div>
+
 </div>
 
 

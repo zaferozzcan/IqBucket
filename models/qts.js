@@ -6,7 +6,7 @@ module.exports = qts = [
         answer: "An iframe is an HTML document which can be embedded inside another HTML page.",
         tech: "HTML5",
         level: "entry",
-        c: "github.com/FuelFrontend "
+        source: "github.com/FuelFrontend ",
     },
     {
         question: "What is the purpose of the alt attribute on images? ",
