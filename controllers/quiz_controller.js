@@ -24,11 +24,12 @@ quizRouter.get("/", (req, res) => {
 
 // cards show route
 quizRouter.get("/cards", (req, res) => {
-    for (key of [Object.keys(quizReqArr)]) {
-        Question.find({ tech: key }, (err, data) => {
-            res.send(data)
-        })
-    }
+    // for (key of [Object.keys(quizReqArr)]) {
+    //     Question.find({ tech: key }, (err, data) => {
+    //         res.send(data)
+    //     })
+    // }
+    res.render("../views/index/quiz_cards.ejs")
 })
 
 // cards post route
