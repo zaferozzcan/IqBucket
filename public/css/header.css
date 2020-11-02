@@ -323,3 +323,10 @@ input[type="checkbox"] {
   font-size: 12px;
   text-align: center;
 }
+
+
+.question-edit-button a,.question-delete-button a{
+    background-color: #FA5;
+    margin-left: 20px;
+    border-radius: 5px;
+}

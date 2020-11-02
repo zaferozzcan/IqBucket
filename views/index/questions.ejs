@@ -11,9 +11,9 @@
             </div>
         </div>
         <div class="add-question-button"><button style="border-radius: 5px;background-color: #FA5;"
-                onclick="location.href='/questions/ <%=tech %>/new'" type="submit">add more
+                onclick="location.href='/questions/ <%=tech %>/new'" type="submit">Add more
                 <%= tech %>
-                questions</button></div>
+                Questions</button></div>
 
 
         <div style="border:1px solid; border-radius: 5px;" class="row question-box-inner">
@@ -23,7 +23,12 @@
                 <ol class="question-chip-list">
                     <% qts.forEach(q =>{ %>
                     <li>
-                        <button type="button" class="collapsible"> <span><%=q.question%></span></button>
+                        <!-- question delete and edit button -->
+                        <button type="button" class="collapsible"> <span><%=q.question%> <small
+                                    class="question-edit-button"><a href="">Edit</a></small><small
+                                    class="question-edit-button"><a href="">Edit</a></small></span></button>
+
+
                         <div class="content">
                             <p>Answer: <%=q.answer%></p>
                             <a class="source" href=<%=q.source %>>Source: <%=q.source %></a>
