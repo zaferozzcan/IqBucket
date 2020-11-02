@@ -55,6 +55,22 @@ questionRouter.post("/", (req, res) => {
 })
 
 
+// edit show route
+questionRouter.get("/:tech/:id/edit", (req, res) => {
+    Question.find({ _id: req.params.id }, (err, data) => {
+        if (!err) {
+            res.render("../views/show/edit_question.ejs", {
+                q: data
+            })
+        } else {
+            console.log("edit question error");
+        }
+    })
+})
+
+
+
+// delete route
 questionRouter.delete("/:tech/:id", (req, res) => {
     Question.findByIdAndDelete({ _id: req.params.id }, (err, data) => {
         if (!err) {
@@ -63,6 +79,7 @@ questionRouter.delete("/:tech/:id", (req, res) => {
             console.log(data);
         }
     })
+    res.redirect("/")
 })
 
 
