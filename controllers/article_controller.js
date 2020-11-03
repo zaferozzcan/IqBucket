@@ -17,12 +17,12 @@ articleRouter.get("/articles/create", (req, res) => {
     res.redirect("/")
 })
 
-articleRouter.get("/:tech/articles", (req, res) => {
-    Article.find({}, (err, data) => {
+articleRouter.get("/:id", (req, res) => {
+    Article.findById({ _id: req.params.id }, (err, data) => {
         if (!err) {
             console.log(data);
-            res.render("index.ejs", {
-                art: data
+            res.render("../views/index/article.ejs", {
+                article: data
             })
         }
     })
