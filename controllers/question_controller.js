@@ -51,7 +51,7 @@ questionRouter.post("/", (req, res) => {
             console.log("error new question post", err);
         }
     })
-    res.redirect("/questions")
+    res.redirect(`/questions/${req.body.tech}`)
 })
 
 

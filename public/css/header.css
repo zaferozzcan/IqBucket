@@ -31,7 +31,6 @@ img{
 
 /* subject box */
 #subject-box{
-   
     position: relative;
     margin: 150px auto 150px auto;
     text-align: center;
@@ -53,7 +52,7 @@ img{
     font-weight: 900;
 }
 .header h1{
-    font-size: 4rem;
+    font-size: 3rem;
 }
 
 span{
@@ -96,8 +95,6 @@ form .header-form{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-  
-   
 }
 .subject-chip-box{
     margin-top: 10px;
@@ -161,6 +158,7 @@ form .header-form{
      height: fit-content;
      margin-right: 0;
      margin-bottom: 0;
+    box-shadow: 100px;
  }
 
  .source{
@@ -332,4 +330,10 @@ input[type="checkbox"] {
   font-weight: normal;
   font-size: 12px;
   text-align: center;
+}
+
+
+.article-container{
+    width: 70%;
+    margin: 40px auto;
 }

@@ -12,11 +12,10 @@
             </div>
         </div>
 
-        <div class="row subject-box-inner">
+        <div id="subject-box-inner" class="row subject-box-inner">
             <div class="col-md-4 col-sm-12">
                 <form class="header-form" action="/subjects/front-end" method="GET">
-                    <input onclick="" class="header-form-input front-end-input" type="submit"
-                        value="Front End Questions">
+                    <input class="header-form-input front-end-input" type="submit" value="Front End Questions">
                 </form>
             </div>
             <div class="col-md-4  col-sm-12">
@@ -52,14 +51,14 @@
                         <p>Please fill the fields
                         </p>
                         <form style="display: flex;flex-direction: column;" action="/subjects" method="POST">
-                            <input name="name" type="text" placeholder="tech name" />
-                            <input name="area" type="text" placeholder="tech area" />
+                            <input autocomplete="off" name="name" type="text" placeholder="tech name" />
+                            <input autocomplete="off" name="area" type="text" placeholder="tech area" />
                             <input style="background-color: lightgray; border-radius: 5px;" type="submit" value="Add" />
                         </form>
                     </div>
                 </div>
                 <script>
-                    $(".show-tooltip").on("mouseover", function (event) {
+                    $(".show-tooltip").on("click", function (event) {
                         console.log("I got move");
                         $(".tooltip-form").fadeIn()
 

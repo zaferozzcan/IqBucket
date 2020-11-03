@@ -1,5 +1,6 @@
 const { text } = require("express");
 const express = require("express");
+const Article = require("../models/articles");
 const Subject = require("../models/subjects");
 const subjs = require("../models/subjs");
 
@@ -23,31 +24,79 @@ subjectRouter.get("/create/seed", (req, res) => {
 
 
 // index route
-subjectRouter.get("/:area", (req, res) => {
-    if (req.params.area) {
-        Subject.find({ area: req.params.area }, (err, data) => {
-            if (!err) {
-                res.render("index.ejs", {
-                    subjects: data,
-                    area: req.params.area
-                });
-            } else {
-                console.log("Cannot load subs");
-            }
-        })
-    } else {
-        Subject.find({}, (err, data) => {
-            if (!err) {
-                res.render("index.ejs", {
-                    subjects: data
-                });
-            } else {
-                console.log("Cannot load subs");
-            }
-        })
-    }
+// subjectRouter.get("/:area", (req, res) => {
+//     if (req.params.area) {
+//         Subject.find({ area: req.params.area }, (err, data) => {
+//             if (!err) {
+//                 res.render("index.ejs", {
+//                     subjects: data,
+//                     area: req.params.area
+//                 });
+//             } else {
+//                 console.log("Cannot load subjs");
+//             }
+//         })
+//     } else {
+//         Subject.find({}, (err, data) => {
+//             if (!err) {
+//                 res.render("index.ejs", {
+//                     subjects: data
+//                 });
+//             } else {
+//                 console.log("Cannot load subjs");
+//             }
+//         })
+//     }
 
+// })
+
+
+subjectRouter.get("/:area", (req, res) => {
+    Article.find({}, (err, artData) => {
+        if (!err) {
+            Subject.find({ area: req.params.area }, (err, subjData) => {
+                if (!err) {
+                    console.log(artData);
+                    res.render("index.ejs", {
+                        subjects: subjData,
+                        articles: artData
+                    })
+                } else {
+                    console.log('an error in finding subject data');
+                }
+            })
+        } else {
+            console.log("an error in finding article data");
+            Subject.find({ area: req.params.area }, (err, subjData) => {
+                if (!err) {
+                    console.log(artData);
+                    res.render("index.ejs", {
+                        subjects: subjData,
+                        articles: artData
+                    })
+                } else {
+                    console.log('an error in finding subject data');
+                    Subject.find({}, (err, data) => {
+                        if (!err) {
+                            res.render("index.ejs", {
+                                subjects: data
+                            });
+                        } else {
+                            console.log("Cannot load subjs");
+                        }
+                    })
+                }
+            })
+        }
+    })
 })
+
+
+
+
+
+
+
 
 subjectRouter.post("/", (req, res) => {
     console.log("post body", req.body);

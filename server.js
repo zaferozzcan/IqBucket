@@ -46,6 +46,8 @@ app.use('/questions', questionController)
 const quizController = require('./controllers/quiz_controller')
 app.use('/quiz', quizController)
 
+const articleController = require('./controllers/article_controller')
+app.use('/subjects', articleController)
 
 
 // route
