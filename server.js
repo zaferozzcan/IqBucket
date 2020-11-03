@@ -21,7 +21,7 @@ app.use(express.urlencoded({ extended: true }))
 
 // DATABASE
 mongoose.connect(
-    mongodbURI,
+    mongoURI,
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
