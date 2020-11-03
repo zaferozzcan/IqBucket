@@ -2,7 +2,7 @@
   "name": "iqbucket",
   "version": "1.0.0",
   "engines": {
-    "node": "10.11.0"
+    "node": "14.15.0"
   },
   "description": "\"An web app for keeping interview questions together\"",
   "main": "server.js",

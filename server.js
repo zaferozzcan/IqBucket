@@ -9,7 +9,7 @@ var favicon = require('serve-favicon');
 require("dotenv").config()
 const app = express()
 const db = mongoose.connection
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000;
 const mongodbURI = process.env.MONGODBURI
 
 // MIDDLEWARE
