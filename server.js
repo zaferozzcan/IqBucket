@@ -10,7 +10,7 @@ require("dotenv").config()
 const app = express()
 const db = mongoose.connection
 const PORT = process.env.PORT || 3000;
-const mongodbURI = process.env.MONGODBURI
+const mongoURI = process.env.MONGODB_URI || 'mongodb://localhost:27017/IqBucket'
 
 // MIDDLEWARE
 
