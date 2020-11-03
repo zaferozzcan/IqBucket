@@ -11,6 +11,17 @@
     })
 </script>
 
+<script>
+    let time = new Date().getHours();
+    if (time > 5 && time < 12) {
+        $(".greeting").text("Good Morning")
+    } else if (time > 12 && time < 17) {
+        $(".greeting").text("Good Afternoon")
+    } else {
+        $(".greeting").text("Good Evening")
+    }
+</script>
+
 </body>
 
 </html>

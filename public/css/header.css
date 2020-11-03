@@ -29,6 +29,10 @@ img{
     margin-right: 70px;
 }
 
+.greeting:hover{
+    color: #FA5;
+}
+
 /* subject box */
 #subject-box{
     position: relative;
@@ -337,3 +341,5 @@ input[type="checkbox"] {
     width: 70%;
     margin: 40px auto;
 }
+
+

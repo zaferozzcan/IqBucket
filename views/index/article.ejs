@@ -2,9 +2,16 @@
 
 <%- include("../partials/navbar.ejs") %>
 
-<div style="margin-top: 100px;" class="container">
+<div style="margin-top: 100px;width: 70%;" class="container">
     <h1><%= article.title %></h1>
     <p><%= article.content %></p>
+    <small>
+        <span>
+            <h6 style="text-decoration-line: underline; text-decoration-color: black;">
+                Source: <%= article.source %>
+            </h6>
+        </span>
+    </small>
 </div>
 
 

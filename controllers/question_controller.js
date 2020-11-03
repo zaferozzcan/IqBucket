@@ -94,7 +94,7 @@ questionRouter.delete("/:tech/:id", (req, res) => {
             console.log(data);
         }
     })
-    res.redirect("/")
+    res.redirect("/questions/" + req.params.tech)
 })
 
 

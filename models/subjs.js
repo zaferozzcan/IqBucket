@@ -20,7 +20,7 @@ module.exports = subj = [
     },
     {
         name: "GraphQL",
-        area: "front-end"
+        area: "back-end"
     },
     {
         name: "HTML5",
