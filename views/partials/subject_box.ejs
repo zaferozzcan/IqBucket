@@ -50,7 +50,11 @@
                         </p>
                         <form style="display: flex;flex-direction: column;" action="/subjects" method="POST">
                             <input autocomplete="off" name="name" type="text" placeholder="tech name" />
-                            <input autocomplete="off" name="area" type="text" placeholder="tech area" />
+                            <select name="area" id="new-area">
+                                <option value="front-end">front-end</option>
+                                <option value="back-end">back-end</option>
+                                <option value="problem-solving">problem-solving</option>
+                            </select>
                             <input style="background-color: lightgray; border-radius: 5px;" type="submit" value="Add" />
                         </form>
                     </div>

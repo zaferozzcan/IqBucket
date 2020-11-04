@@ -75,7 +75,6 @@ subjectRouter.get("/:area", (req, res) => {
 
 
 
-
 subjectRouter.post("/", (req, res) => {
     console.log("post body", req.body);
     Subject.create(req.body, (err, data) => {
@@ -89,7 +88,8 @@ subjectRouter.post("/", (req, res) => {
 })
 
 
-subjectRouter.get("/front-end/:tech")
+
+
 
 
 
