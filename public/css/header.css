@@ -344,9 +344,9 @@ input[type="checkbox"] {
 
 
 /* footer */
-.footer-container{
+/* .footer-container{
    transform: translateY(60px);
-}
+} */
 
 .footer-inner{
     display: flex;

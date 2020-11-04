@@ -35,7 +35,7 @@ questionRouter.get("/:tech", (req, res) => {
     })
 })
 
-// create show
+// create show 
 questionRouter.get("/:tech/new", (req, res) => {
     res.render("../views/show/new_question.ejs", {
         tech: req.params.tech
@@ -43,7 +43,7 @@ questionRouter.get("/:tech/new", (req, res) => {
 })
 
 // cretae post
-questionRouter.post("/", (req, res) => {
+questionRouter.post("/:tech", (req, res) => {
     Question.create(req.body, (err, res) => {
         if (!err) {
             console.log("A new question added.");
@@ -51,7 +51,7 @@ questionRouter.post("/", (req, res) => {
             console.log("error new question post", err);
         }
     })
-    res.redirect(`/questions/${req.body.tech}`)
+    res.redirect(`/questions/${req.params.tech}`)
 })
 
 

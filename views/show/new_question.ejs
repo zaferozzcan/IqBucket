@@ -3,7 +3,7 @@
 <%- include("../partials/navbar.ejs") %>
 
 
-<form style="margin: 150px 0 10px 5px; font-weight: 100;" action="/questions" method="POST">
+<form style="margin: 150px 0 10px 5px; font-weight: 100;" action="/questions/<%= tech %>" method="POST">
     <h1>Add New <%= tech %> Question</h1>
     <div class="form-group">
         <input autocomplete="off" required:true type="text" class="form-control" name="question"
