@@ -384,3 +384,15 @@ input[type="checkbox"] {
 .social i:hover{
     color: black;
 }
+
+
+
+/*  */
+@media all and (max-width:375px){
+    .article-header{
+        margin-top: 200px;
+    }
+
+   
+
+    }
