@@ -299,7 +299,7 @@ input[type="checkbox"] {
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  background: #ffc728;
+  background: #FA5;
   color: #000;
   text-align: center;
 }
@@ -310,7 +310,7 @@ input[type="checkbox"] {
   left: 0;
   width: 100%;
   border-radius: 10px;
-  background:lightgray;
+  background:white;
   backface-visibility: hidden;
   overflow: hidden;
   color: #333;
