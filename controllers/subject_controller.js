@@ -30,7 +30,7 @@ subjectRouter.get("/:area", (req, res) => {
         if (!err) {
             Subject.find({ area: req.params.area }, (err, subjData) => {
                 if (!err) {
-                    Question.count({}, (err, qCountData) => {
+                    Question.countDocuments({}, (err, qCountData) => {
                         if (!err) {
                             res.render("index.ejs", {
                                 subjects: subjData,
@@ -69,8 +69,6 @@ subjectRouter.get("/:area", (req, res) => {
         }
     })
 })
-
-
 
 
 

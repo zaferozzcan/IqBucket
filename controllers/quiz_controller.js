@@ -31,7 +31,6 @@ quizRouter.get("/cards", (req, res) => {
                 <h1>You must select a technology</h1>
                 <button onclick='location.href="/quiz"' type='button'>Go Back</button>
                 `)
-
             }
             // console.log("random data", data[Math.floor(Math.random() * data.length) - 1]);
             if (!err) {
