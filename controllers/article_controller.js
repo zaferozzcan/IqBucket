@@ -41,7 +41,8 @@ articleRouter.get("/:id", (req, res) => {
         if (!err) {
             console.log(data);
             res.render("../views/index/article.ejs", {
-                article: data
+                article: data,
+                currentUser:req.session.currentUser
             })
         }
     })

@@ -73,7 +73,8 @@ questionRouter.get("/:tech/:id/edit",isAuthenticated, (req, res) => {
         if (!err) {
             console.log(data);
             res.render("../views/show/edit_question.ejs", {
-                q: data[0]
+                q: data[0],
+                currentUser:req.session.currentUser
             })
         } else {
             console.log("edit question error", err);

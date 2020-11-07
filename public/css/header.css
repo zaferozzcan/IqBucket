@@ -378,6 +378,6 @@ input[type="checkbox"] {
 /*  */
 @media all and (max-width: 375px) {
   .article-header {
-    margin-top: 200px;
+    margin-top: 250px;
   }
 }

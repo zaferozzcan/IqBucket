@@ -7,6 +7,7 @@ users.get('/new', (req, res) => {
     res.render('../views/show/new_user.ejs',{
         currentUser:req.session.currentUser
     })
+   
 })
 
 users.post('/', (req, res) => {
