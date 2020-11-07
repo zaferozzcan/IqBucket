@@ -32,10 +32,12 @@ subjectRouter.get("/:area", (req, res) => {
                 if (!err) {
                     Question.countDocuments({}, (err, qCountData) => {
                         if (!err) {
+                            console.log("currentUser",req.session.currentUser);
                             res.render("index.ejs", {
                                 subjects: subjData,
                                 articles: artData,
-                                qCount: qCountData
+                                qCount: qCountData,
+                                currentUser:req.session.currentUser
                             })
                         }
                     })

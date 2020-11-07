@@ -1,0 +1,30 @@
+<%- include("../partials/header.ejs") %>
+
+<%- include("../partials/navbar.ejs") %>
+
+
+<form style="margin-top: 120px;margin-left: 10px;width: 90%;" action="/users" method="POST">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input autocomplete="off" name="name" type="text" class="form-control" id="name" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input autocomplete="off" name="lastName" type="text" class="form-control" id="lastName" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputEmail1">Email address</label>
+      <input autocomplete="off" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+    </div>
+    <div class="form-group">
+      <label for="exampleInputPassword1">Password</label>
+      <input autocomplete="off" name="password" type="password" class="form-control" id="exampleInputPassword1">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+
+  <br><br><br>
+
+  
+  <%- include("../partials/footer.ejs") %>

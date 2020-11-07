@@ -6,6 +6,16 @@ const Subject = require("../models/subjects");
 const questionRouter = express.Router()
 const qts = require("../models/qts")
 
+
+
+const isAuthenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+      return next()
+    } else {
+      res.redirect('/sessions/new')
+    }
+  }
+
 // seed \\
 questionRouter.get("/create/seed", (req, res) => {
     Question.create(qts, (err, data) => {
@@ -22,12 +32,13 @@ questionRouter.get("/create/seed", (req, res) => {
 
 
 // index //
-questionRouter.get("/:tech", (req, res) => {
+questionRouter.get("/:tech", isAuthenticated, (req, res) => {
     Question.find({ tech: req.params.tech }, (err, data) => {
         if (!err) {
             res.render("index/questions.ejs", {
                 qts: data,
-                tech: req.params.tech
+                tech: req.params.tech,
+                currentUser:req.session.currentUser
             })
         } else {
             console.log("err in get question", err);
@@ -36,14 +47,15 @@ questionRouter.get("/:tech", (req, res) => {
 })
 
 // create show 
-questionRouter.get("/:tech/new", (req, res) => {
+questionRouter.get("/:tech/new",isAuthenticated, (req, res) => {
     res.render("../views/show/new_question.ejs", {
-        tech: req.params.tech
+        tech: req.params.tech,
+        currentUser:req.session.currentUser
     })
 })
 
 // cretae post
-questionRouter.post("/:tech", (req, res) => {
+questionRouter.post("/:tech",isAuthenticated, (req, res) => {
     Question.create(req.body, (err, res) => {
         if (!err) {
             console.log("A new question added.");
@@ -56,7 +68,7 @@ questionRouter.post("/:tech", (req, res) => {
 
 
 // edit show route
-questionRouter.get("/:tech/:id/edit", (req, res) => {
+questionRouter.get("/:tech/:id/edit",isAuthenticated, (req, res) => {
     Question.find({ _id: req.params.id }, (err, data) => {
         if (!err) {
             console.log(data);
@@ -72,7 +84,7 @@ questionRouter.get("/:tech/:id/edit", (req, res) => {
 
 
 // edit put route
-questionRouter.put("/:tech/:id/", (req, res) => {
+questionRouter.put("/:tech/:id/",isAuthenticated, (req, res) => {
     Question.findByIdAndUpdate({ _id: req.params.id }, req.body, (err, data) => {
         if (!err) {
             console.log("the question updated");
@@ -96,6 +108,8 @@ questionRouter.delete("/:tech/:id", (req, res) => {
     })
     res.redirect("/questions/" + req.params.tech)
 })
+
+
 
 
 

@@ -8,13 +8,22 @@ const { json } = require("express");
 const quizRouter = express.Router()
 
 var quizReqArr = {}
+const isAuthenticated = (req, res, next) => {
+    if (req.session.currentUser) {
+      return next()
+    } else {
+      res.redirect('/sessions/new')
+    }
+  }
 
-quizRouter.get("/", (req, res) => {
+quizRouter.get("/", isAuthenticated, (req, res) => {
 
     Subject.find({}, (err, data) => {
         if (!err) {
             res.render("../views/index/quiz.ejs", {
-                subs: data
+                subs: data,
+                currentUser:req.session.currentUser
+
             })
         } else {
             console.log("quiz err");
@@ -23,7 +32,7 @@ quizRouter.get("/", (req, res) => {
 })
 
 // cards show route
-quizRouter.get("/cards", (req, res) => {
+quizRouter.get("/cards", isAuthenticated, (req, res) => {
     for (key of [Object.keys(quizReqArr)]) {
         Question.find({ tech: key }, (err, data) => {
             if (data.length < 1) {
@@ -35,7 +44,9 @@ quizRouter.get("/cards", (req, res) => {
             // console.log("random data", data[Math.floor(Math.random() * data.length) - 1]);
             if (!err) {
                 res.render("../views/index/quiz_cards.ejs", {
-                    cardQuestions: data[Math.ceil(Math.random() * data.length) - 1]
+                    cardQuestions: data[Math.ceil(Math.random() * data.length) - 1],
+                    currentUser:req.session.currentUser
+
                 })
             }
         })
