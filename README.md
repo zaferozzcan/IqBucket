@@ -24,7 +24,7 @@ Deployed on https://iqsbucket.herokuapp.com/
 
 A full-stack app that helps professionals to prepare for technical interviews. A user can see the questions about the technology. The user can edit or delete the questions.
 Also, the user is allowed to add more questions.  
-![](home-page.png | width)
+![](home-page.png | width=100)
 user must sign in to see questions
 ![](sign-in.png)
 ![](card1.png =200x200)
